@@ -6,6 +6,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Login = lazy(() => import('./pages/Login'));
 const Chat = lazy(() => import('./pages/Chat'));
 const Groups = lazy(() => import('./pages/Groups'));
+const Notfound =lazy(()=>import("./pages/Notfound"))
 
 const App = () => {
   const user = true; // Set this based on your authentication logic
@@ -19,9 +20,9 @@ const App = () => {
           <Route path="/chat" element={<Chat/>} />
           <Route path="/groups" element={<Groups />} />
           <Route path="/about" element={<h1>About</h1>} />
-          <Route path="*" element={<h1>Page Not Found</h1>} />
           </Route>
           <Route path="/login" element={<ProtectRoute user={!user} redirect='/'><Login /></ProtectRoute>} />
+          <Route path="*" element={<Notfound/>} />
         </Routes>
       {/* </Suspense> */}
     </Router>
