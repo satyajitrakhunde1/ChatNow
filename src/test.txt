@@ -1,0 +1,3 @@
+lazy loading
+const Home =lazy(()=>import("./pages/Home"))
+
