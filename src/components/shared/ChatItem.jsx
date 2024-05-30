@@ -1,7 +1,8 @@
 import React, { memo } from "react";
 import { Link } from "../styles/StyledComponent";
-import { Stack, Typography,Box } from "@mui/material";
+import { Stack, Typography, Box } from "@mui/material";
 import { Widgets, WidthFull } from "@mui/icons-material";
+import AvatarCard from "./AvatarCard";
 
 const ChatItem = ({
   avatar = [],
@@ -12,13 +13,14 @@ const ChatItem = ({
   isOnline,
   newMessageAlert,
   index = 0,
-  handleDeleteChatOpen,
+  handleDeleteChat,
 }) => {
-console.log("newMessageAlert.count ",newMessageAlert)
-console.log("is online   ",isOnline)
-
   return (
-    <Link  sx={{padding:"0"}} to={`/chat/${_id}`} onContextMenu={(e)=>handleDeleteChatOpen(e,_id,groupChat)} >
+    <Link
+      sx={{ padding: "0" }}
+      to={`/chat/${_id}`}
+      onContextMenu={(e) => handleDeleteChat(e, _id, groupChat)}
+    >
       <div
         style={{
           display: "flex",
@@ -30,7 +32,7 @@ console.log("is online   ",isOnline)
           position: "relative",
         }}
       >
-        {/* {avatar.card} */}
+      <AvatarCard avatar={avatar}/>
 
         <Stack>
           <Typography>{name}</Typography>
@@ -57,4 +59,4 @@ console.log("is online   ",isOnline)
   );
 };
 
-export default memo(ChatItem); 
+export default memo(ChatItem);

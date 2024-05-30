@@ -5,9 +5,20 @@ import Title from "../shared/Title";
 import { Grid } from "@mui/material";
 import ChatList from "../specific/ChatList";
 import { sampleChats } from "../constants/SampleData";
+import { useParams } from "react-router-dom";
 
 const AppLayout = () => (Wrappedcomponent) => {
   return (props) => {
+
+    const params = useParams();
+    const chatId =params.chatId
+    
+
+const handleDeleteChat =(e, _id,groupChat)=>{
+e.preventDefault();
+console.log("delete chat", _id,groupChat)
+}
+
     return (
       <>
         <Title />
@@ -22,9 +33,11 @@ const AppLayout = () => (Wrappedcomponent) => {
           >
             <ChatList
               chats={sampleChats}
-              chatId={"1"}
-              newMessagesAlert={[{ chatId:"1", count: 4 }]}
-              onlineusers={["1", "2"]}
+              chatId={chatId}
+              handleDeleteChat={handleDeleteChat}
+              // newMessagesAlert={[{ chatId, count: 4 }]}
+              // onlineusers={["1", "2"]}
+             
             />
           </Grid>
           <Grid item xs={12} sm={8} md={5} lg={6} height={"100%"}>
