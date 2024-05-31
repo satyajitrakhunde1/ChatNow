@@ -13,3 +13,18 @@
     groupChat:false,
     members:["1","2"]
   }]
+
+  export const SampleUsers =[
+{
+  avatar:["https://www.w3schools.com/howto/img_avatar.png"],
+    name:"John boi",
+    _id:"1"
+},
+{
+  avatar:["https://www.w3schools.com/howto/img_avatar.png"],
+    name:"John boi",
+    _id:"2"
+}
+
+
+  ]
