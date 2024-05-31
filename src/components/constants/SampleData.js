@@ -25,6 +25,17 @@
     name:"John boi",
     _id:"2"
 }
+]
+  export const SampleNotifications =[
+{ sender:{
+  avatar:["https://www.w3schools.com/howto/img_avatar.png"],
+    name:"John bhai",
+},_id:"1",},
 
+{ sender:{
+  avatar:["https://www.w3schools.com/howto/img_avatar.png"],
+    name:"John patil",
+},_id:"2",}
 
-  ]
+]
+
