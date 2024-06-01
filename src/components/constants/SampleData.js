@@ -17,7 +17,7 @@
   export const SampleUsers =[
 {
   avatar:["https://www.w3schools.com/howto/img_avatar.png"],
-    name:"John boi",
+    name:"John sham sundar",
     _id:"1"
 },
 {
@@ -55,7 +55,7 @@ export const sampleMessage = [
       name: "Chaman",
     },
     chat: "chatId",
-    createdAt: "2024-02-12T10:41:30.630Z",
+    createdAt: "2024-05-31T10:41:30.630Z",
   },
   {
     attachments: [
