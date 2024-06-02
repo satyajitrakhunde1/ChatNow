@@ -14,7 +14,7 @@ const AddMemberDialog = ({ addMember, isLoadingAddMember, chatId }) => {
   };
 
   const addMemberSubmitHandler = () => {
-    // Add your submit logic here
+   closeHandler()
   };
 
   const closeHandler = () => {
