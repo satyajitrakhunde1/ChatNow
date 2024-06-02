@@ -11,7 +11,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { lightblue, matblack } from "../components/constants/color";
+import { lightblue, matblack,lightblueGradient } from "../components/constants/color";
 import {
   Add as AddIcon,
   Delete as DeleteIcon,
@@ -197,7 +197,7 @@ const Groups = () => {
         item
         sx={{ display: { xs: "none", sm: "block" } }}
         sm={4}
-        bgcolor={lightblue}
+        // bgcolor={lightblue}
       >
         <GroupList myGroups={sampleChats} chatId={chatId} />
       </Grid>
@@ -278,7 +278,7 @@ const Groups = () => {
       )}
 
       <Drawer
-        sx={{ display: { xs: "block", sm: "none" } }}
+        sx={{ display: { xs: "block", sm: "none"},backgroundColor:lightblue }}
         open={isMobileMenuOpen}
         onClose={handleMobileClose}
       >
@@ -289,7 +289,8 @@ const Groups = () => {
 };
 
 const GroupList = ({ myGroups = [], chatId }) => (
-  <Stack width="100%">
+  <Stack width="100%" sx={{backgroundColor:lightblueGradient,height :"100vh",overflow:"auto"
+   }}>
     {myGroups.length > 0 ? (
       myGroups.map((group) => (
         <GroupListItem group={group} chatId={chatId} key={group._id} />
