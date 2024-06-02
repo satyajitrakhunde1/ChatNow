@@ -4,7 +4,7 @@ import React from 'react';
 import AdminLayout from '../../components/layout/AdminLayout';
 import moment from 'moment';
 import { SearchField, CurveButton } from '../../components/styles/StyledComponent';
-import { LineChart } from '../../components/specific/Charts';
+import { DoughnutChart, LineChart } from '../../components/specific/Charts';
 
 const Dashboard = () => {
   const Appbar = (
@@ -47,10 +47,12 @@ const Dashboard = () => {
     <AdminLayout>
       <Container component={"main"}>
         {Appbar}
-        <Stack direction={"row"} spacing={"2rem"} flexWrap={"wrap"}>
-<Paper elevation={3} sx={{padding:"2rem 3.5rem",borderRadius:"1rem",width:"100%",maxWidth:"45rem",height:"25rem"}}>
+
+        <Stack direction={{xs:"column",lg:"row"}} gap={"2rem"} flexWrap={"wrap"} justifyContent={"center"} alignItems={{xs:"center",lg:"flex-start"}}>
+<Paper elevation={3} sx={{padding:"2rem 3.5rem",borderRadius:"1rem",width:"100%",maxWidth:"45rem"}}>
+     
     <Typography margin={"2rem 0"} variant='h4'>Last Messages</Typography>
-    <LineChart/>
+    <LineChart value={[23,56,33,67,33,2]}/>
 </Paper>
 <Paper
   elevation={3}
@@ -66,7 +68,7 @@ const Dashboard = () => {
     height:"25rem"
   }}
 >
-  {"Doughnut Chart"}
+  <DoughnutChart labels={["Single chat","Group chats"]} value={[23,66]}/>
 
   <Stack
   position={"absolute"}
